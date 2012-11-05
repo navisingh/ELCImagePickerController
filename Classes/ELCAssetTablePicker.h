@@ -17,15 +17,15 @@
 	NSMutableArray *elcAssets;
 	int selectedAssets;
 	
-	id parent;
+	id __weak parent;
 	
 	NSOperationQueue *queue;
 }
 
-@property (nonatomic, assign) id <ELCAssetSelectionDelegate> parent;
-@property (nonatomic, retain) ALAssetsGroup *assetGroup;
-@property (nonatomic, retain) NSMutableArray *elcAssets;
-@property (nonatomic, retain) IBOutlet UILabel *selectedAssetsLabel;
+@property (nonatomic, weak) id <ELCAssetSelectionDelegate> parent;
+@property (nonatomic, strong) ALAssetsGroup *assetGroup;
+@property (nonatomic, strong) NSMutableArray *elcAssets;
+@property (nonatomic, strong) IBOutlet UILabel *selectedAssetsLabel;
 @property (nonatomic, assign) BOOL singleSelection;
 @property (nonatomic, assign) BOOL immediateReturn;
 @property (nonatomic, assign) BOOL startAtBottom;

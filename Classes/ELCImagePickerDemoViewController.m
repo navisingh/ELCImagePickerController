@@ -26,8 +26,6 @@
     
     ELCImagePickerDemoAppDelegate *app = (ELCImagePickerDemoAppDelegate *)[[UIApplication sharedApplication] delegate];
 	[app.viewController presentModalViewController:elcPicker animated:YES];
-    [elcPicker release];
-    [albumController release];
 }
 
 - (IBAction)launchSpecialController {
@@ -44,7 +42,6 @@
         self.chosenImages = nil;
         UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Album Error: %@ - %@", [error localizedDescription], [error localizedRecoverySuggestion]] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
-        [alert release];
         
         NSLog(@"A problem occured %@", [error description]);
         // an error here means that the asset groups were inaccessable.
@@ -67,8 +64,6 @@
     [tablePicker.assetGroup setAssetsFilter:[ALAssetsFilter allPhotos]];
     
 	[self presentModalViewController:elcPicker animated:YES];
-	[tablePicker release];
-    [elcPicker release];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
@@ -104,7 +99,6 @@
 		imageview.frame = workingFrame;
 		
 		[scrollview addSubview:imageview];
-		[imageview release];
 		
 		workingFrame.origin.x = workingFrame.origin.x + workingFrame.size.width;
 	}
@@ -133,8 +127,5 @@
 }
 
 
-- (void)dealloc {
-    [super dealloc];
-}
 
 @end

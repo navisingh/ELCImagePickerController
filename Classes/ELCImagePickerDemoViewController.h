@@ -14,7 +14,7 @@
 	IBOutlet UIScrollView *scrollview;
 }
 
-@property (nonatomic, retain) IBOutlet UIScrollView *scrollview;
+@property (nonatomic, strong) IBOutlet UIScrollView *scrollview;
 @property (nonatomic, copy) NSArray *chosenImages;
 
 // the default picker controller

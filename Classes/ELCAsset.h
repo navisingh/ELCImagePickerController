@@ -20,11 +20,11 @@
 @interface ELCAsset : UIView {
 	ALAsset *asset;
 	UIImageView *overlayView;
-	id <ELCAssetDelegate> parent;
+	id <ELCAssetDelegate> __weak parent;
 }
 
-@property (nonatomic, retain) ALAsset *asset;
-@property (nonatomic, assign) id parent;
+@property (nonatomic, strong) ALAsset *asset;
+@property (nonatomic, weak) id parent;
 @property (nonatomic, assign) BOOL selected;
 
 -(id)initWithAsset:(ALAsset*)_asset;

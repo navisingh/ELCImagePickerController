@@ -11,10 +11,10 @@
 
 @interface ELCImagePickerController : UINavigationController <ELCAssetSelectionDelegate> {
 
-	id delegate;
+	id __weak delegate;
 }
 
-@property (nonatomic, assign) id delegate;
+@property (nonatomic, weak) id delegate;
 
 -(void)cancelImagePicker;
 

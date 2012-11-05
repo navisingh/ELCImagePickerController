@@ -13,13 +13,13 @@
 	
 	NSMutableArray *assetGroups;
 	NSOperationQueue *queue;
-	id <ELCAssetSelectionDelegate> parent;
+	id <ELCAssetSelectionDelegate> __weak parent;
     
     ALAssetsLibrary *library;
 }
 
-@property (nonatomic, assign) id parent;
-@property (nonatomic, retain) NSMutableArray *assetGroups;
+@property (nonatomic, weak) id parent;
+@property (nonatomic, strong) NSMutableArray *assetGroups;
 
 @end
 

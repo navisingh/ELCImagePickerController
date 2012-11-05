@@ -34,7 +34,6 @@
 		[assetImageView setContentMode:UIViewContentModeScaleToFill];
 		[assetImageView setImage:[UIImage imageWithCGImage:[self.asset thumbnail]]];
 		[self addSubview:assetImageView];
-		[assetImageView release];
 		
 		overlayView = [[UIImageView alloc] initWithFrame:viewFrames];
 		[overlayView setImage:[UIImage imageNamed:@"Overlay.png"]];
@@ -68,12 +67,6 @@
     }
 }
 
-- (void)dealloc 
-{    
-    [asset release];
-	[overlayView release];
-    [super dealloc];
-}
 
 @end
 

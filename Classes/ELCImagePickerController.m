@@ -24,7 +24,7 @@
 
 -(void)selectedAssets:(NSArray*)_assets {
 
-	NSMutableArray *returnArray = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray *returnArray = [[NSMutableArray alloc] init];
 	
 	for(ALAsset *asset in _assets) {
 
@@ -35,7 +35,6 @@
 		
 		[returnArray addObject:workingDictionary];
 		
-		[workingDictionary release];	
 	}
 	
     [self popToRootViewControllerAnimated:NO];
@@ -70,7 +69,6 @@
 
 - (void)dealloc {
     NSLog(@"deallocing ELCImagePickerController");
-    [super dealloc];
 }
 
 @end
