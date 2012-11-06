@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @class ELCImagePickerDemoViewController;
 
@@ -17,6 +18,7 @@
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet ELCImagePickerDemoViewController *viewController;
+
 
 @end
 

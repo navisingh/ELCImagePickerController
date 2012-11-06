@@ -13,6 +13,17 @@
 
 @synthesize parent, assetGroups;
 
+//This needs to be a singleton or you are going to get the error:
+//invalid attempt to access <ALAssetPrivate: 0xa144520> past the lifetime of its owning ALAssetsLibrary
++ (ALAssetsLibrary *)defaultAssetsLibrary {
+    static dispatch_once_t pred = 0;
+    static ALAssetsLibrary *library = nil;
+    dispatch_once(&pred, ^{
+        library = [[ALAssetsLibrary alloc] init];
+    });
+    return library;
+}
+
 #pragma mark -
 #pragma mark View lifecycle
 
@@ -27,7 +38,7 @@
     NSMutableArray *tempArray = [[NSMutableArray alloc] init];
 	self.assetGroups = tempArray;
     
-    library = [[ALAssetsLibrary alloc] init];      
+    library = [ELCAlbumPickerController defaultAssetsLibrary];
 
     // Load Albums into assetGroups
     dispatch_async(dispatch_get_main_queue(), ^

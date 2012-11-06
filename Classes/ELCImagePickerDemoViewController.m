@@ -29,7 +29,9 @@
 }
 
 - (IBAction)launchSpecialController {
-    ALAssetsLibrary *library = [[ALAssetsLibrary alloc] init];
+    
+    ALAssetsLibrary *library = [ELCAlbumPickerController defaultAssetsLibrary];
+    
     NSMutableArray *groups = [NSMutableArray array];
     [library enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
         if (group) {

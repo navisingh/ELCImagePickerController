@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ELCImagePickerController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface ELCImagePickerDemoViewController : UIViewController <ELCImagePickerControllerDelegate, UINavigationControllerDelegate, UIScrollViewDelegate> {
 
@@ -23,6 +24,7 @@
 // a special picker controller that limits itself to a single album, and lets the user
 // pick just one image from that album.
 -(IBAction)launchSpecialController;
+
 
 @end
 

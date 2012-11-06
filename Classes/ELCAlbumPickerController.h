@@ -21,5 +21,7 @@
 @property (nonatomic, weak) id parent;
 @property (nonatomic, strong) NSMutableArray *assetGroups;
 
++ (ALAssetsLibrary *)defaultAssetsLibrary;
+
 @end
 
